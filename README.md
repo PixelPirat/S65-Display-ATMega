@@ -10,7 +10,7 @@ Grundlage für diese Bibliothek ist die Vorarbeit von [Christian Kranz](http://w
 Getestet mit `ATMega8`, `ATMega168` und `ATMega328`.  
 Mit _sehr hoher Wahrscheinlichkeit_ auf einem _Arduino_ lauffähig.  
   
-[Demobild](http://picul.de/view/2QU "Demobild")  
+[Demobild](https://raw.github.com/PixelPirat/S65-Display-ATMega/master/Bilder/s65display_demo.png "Demobild")  
   
 *Anwendungsbeispiel und Schaltplan folgen ...*
   
