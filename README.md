@@ -8,7 +8,7 @@ Grundlage für diese Bibliothek ist die Vorarbeit von [Christian Kranz](http://w
 ---  
 
 Getestet mit `ATMega8`, `ATMega168` und `ATMega328`.  
-Mit _sehr hoher Wahrscheinlichkeit_ auf einem _Arduino_ lauffähig.  
+Mit _sehr hoher Wahrscheinlichkeit_ auf einem _Arduino_ lauffähig. (Mikrocontroller sind dieselben) 
   
 [Demobild](https://raw.github.com/PixelPirat/S65-Display-ATMega/master/Bilder/s65display_demo.png "Demobild")  
   
