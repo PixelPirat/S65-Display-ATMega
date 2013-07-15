@@ -12,7 +12,7 @@ Mit _sehr hoher Wahrscheinlichkeit_ auf einem _Arduino_ lauffähig.
   
 [Demobild](http://picul.de/view/2QU "Demobild")  
   
-*Anwendungsbeispiel folgt ...*
+*Anwendungsbeispiel und Schaltplan folgen ...*
   
 ---
   
