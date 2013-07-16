@@ -12,7 +12,9 @@ Mit _sehr hoher Wahrscheinlichkeit_ auf einem _Arduino_ lauffähig. (Mikrocontro
   
 [Demobild](https://raw.github.com/PixelPirat/S65-Display-ATMega/master/Bilder/s65display_demo.png "Demobild")  
   
-*Anwendungsbeispiel und Schaltplan folgen ...*
+[Schaltplan](https://raw.github.com/PixelPirat/S65-Display-ATMega/master/Bilder/s65display_schaltplan.jpg "Schaltplan")
+  
+*Anwendungsbeispiel und ~~Schaltplan folgen~~ ...*
   
 ---
   
