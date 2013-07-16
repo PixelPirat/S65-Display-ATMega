@@ -203,12 +203,12 @@ static const unsigned font[][8] PROGMEM={
   {0x70,0xd8,0xd8,0x70,0x00,0x00,0x00}          // 0x81     Grad Celcius Zeichen
 };
 
-uint8_t aktxp;                              // Beinhaltet die aktuelle Position des Textcursors in X-Achse
-uint8_t aktyp;                              // dto. fuer die Y-Achse
-uint8_t textcolor;                          // Beinhaltet die Farbwahl fuer die Vordergrundfarbe
-uint8_t bkcolor;                            // dto. fuer die Hintergrundfarbe
+uint8_t aktxp;                                  // Beinhaltet die aktuelle Position des Textcursors in X-Achse
+uint8_t aktyp;                                  // dto. fuer die Y-Achse
+uint8_t textcolor;                              // Beinhaltet die Farbwahl fuer die Vordergrundfarbe
+uint8_t bkcolor;                                // dto. fuer die Hintergrundfarbe
 uint8_t outmode;
-uint8_t textsize = 0;                       // Skalierung der Ausgabeschriftgroesse
+uint8_t textsize = 0;                           // Skalierung der Ausgabeschriftgroesse
 
 /* --------------------------------------------------
          Farben:
