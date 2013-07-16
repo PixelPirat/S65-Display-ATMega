@@ -1,4 +1,4 @@
-Siemens S65, M65, CX65 und SK65 Display - ATMega
+Siemens S65, M65, CX65 und SK65 Display - ATmega
 ------------------------------------------------
   
 Die Bibliothek beinhaltet die grundlegenden Funktionen um Displays mit der Seriennummer LS020xxx oder LQ020xxx, die in den Mobiltelefonen Siemens S65 / M65 / CX65 / SK65 verbaut worden sind, anzusprechen.
@@ -7,8 +7,8 @@ Grundlage für diese Bibliothek ist die Vorarbeit von [Christian Kranz](http://w
   
 ---  
 
-Getestet mit `ATMega8`, `ATMega168` und `ATMega328`.  
-Mit _sehr hoher Wahrscheinlichkeit_ auf einem _Arduino_ lauffähig. (Mikrocontroller sind dieselben) 
+Getestet mit `ATmega8`, `ATmega168` und `ATmega328`.  
+Auch auf einem _Arduino_ lauffähig. (Nicht getestet) 
   
 [Demobild](https://raw.github.com/PixelPirat/S65-Display-ATMega/master/Bilder/s65display_demo.png "Demobild")  
   
