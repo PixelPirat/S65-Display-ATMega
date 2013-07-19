@@ -1,6 +1,6 @@
 /*
 
-  Dies ist eine kleine Demo um die grundlegenden Funktionen zu erläutern.
+  Dies ist eine kleine Demo mit den grundlegenden Funktionen.
   
 */
 
