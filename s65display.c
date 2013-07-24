@@ -57,7 +57,10 @@ void circle(int x, int y, int r, uint8_t color );
 
 void graphchar(uint8_t x, uint8_t y, uint8_t ch);
 void outtextxy(uint8_t x, uint8_t y, const uint8_t *msg);
-void showbwimage(char ox, char oy, const unsigned char* const image,uint8_t resX,uint8_t resY);
+void showbwimage(char ox, char oy, const unsigned char* const image, uint8_t resX, uint8_t resY);
+
+void scroll(uint8_t mode, uint8_t speed);
+void scrollw(uint8_t mode, uint8_t start, uint8_t width, uint8_t speed);
 
 /* --------------------------------------------------
       Initialisierungscodes /  Kommandos fuer 
@@ -504,7 +507,7 @@ void clrscr(void)
 
 /* --------------------------------------------------
         setoutmode
-        estimmt, ob die Ausgabe auf dem Display
+        bestimmt, ob die Ausgabe auf dem Display
         horizontal oder vertikal ausgegeben werden 
         soll.
         Bei der Initialisierung des Displays ist
@@ -513,10 +516,6 @@ void clrscr(void)
         Parameter:
             mode = 0 => vertikale Ausgabe (hochkant)
             mode = 1 => horizontale Ausgabe (quer)
-        Parameter:
-             x ==> X-Koordinate
-             y ==> Y-Koordinate
-             f ==> Farbwert
    -------------------------------------------------- */
 
 void setoutmode(uint8_t mode)
@@ -541,7 +540,7 @@ void setoutmode(uint8_t mode)
 
 void putpixel(uint8_t x, uint8_t y, uint8_t f)
 {
-     if (outmode == 0)
+     if(outmode == 0)
      {
        lcd_cmd(0xEF);
        lcd_cmd(0x90);
@@ -566,6 +565,7 @@ void putpixel(uint8_t x, uint8_t y, uint8_t f)
 
 /* --------------------------------------------------
         gotoxy
+
         Setzt den Textcursor an die angegebene
         Textkoordinate.
         
@@ -582,7 +582,8 @@ void gotoxy(unsigned char x, unsigned char y)
 
 /* --------------------------------------------------
         lcd_putchar
-        setzt ein Ascii-Zeichen an der aktuellen
+
+        Setzt ein Ascii-Zeichen an der aktuellen
         Textcursorposition auf das Display.
         
         Die Variable <textsize> gibt an, ob die Ausgabe
@@ -904,6 +905,104 @@ void showbwimage(char ox, char oy, const unsigned char* const image,uint8_t resX
         {
             putpixel(ox + (x * 8) + 8 - bp, oy + y, bkcolor);
         }
+      }
+    }
+  }
+}
+
+/* -------------------------------------------------------------
+        scroll
+
+        Scrollt den ganzen Inhalt des Display einmal nach oben 
+        oder nach unten
+        
+        Parameter
+           mode  => 1 = nach oben / 0 = nach unten
+           speed => Die Zeit zwischen den einzelnen Schritten
+                    in Millisekunden
+   ------------------------------------------------------------- */
+
+void scroll(uint8_t mode, uint8_t speed)
+{
+  uint8_t i,t;
+
+  if(mode)
+  {
+    for (i = 0; i < 176; i++)
+    {
+      lcd_cmd(0xEF);
+      lcd_cmd(0x90);
+      lcd_cmd(0x11);
+      lcd_cmd(i+1);
+      for(t = speed; t != 0; t--)
+      {
+        _delay_ms(1);
+      }
+    }
+  }else{
+    for (i = 176; i > 0; i--)
+    {
+      lcd_cmd(0xEF);
+      lcd_cmd(0x90);
+      lcd_cmd(0x11);
+      lcd_cmd(i-1);
+      for(t = speed; t != 0; t--)
+      {
+        _delay_ms(1);
+      }
+    }
+  }
+}
+
+/* -------------------------------------------------------------
+        scrollw
+
+        Scrollt einen ausgewählten Bereich des Display einmal
+        nach oben oder nach unten
+        
+        Parameter
+           mode  => 1 = nach oben / 0 = nach unten
+           start => Startposition der X-Achse
+           width => Breite des zu Scrollenden Bereichs
+           speed => Die Zeit zwischen den einzelnen Schritten
+                    in Millisekunden
+   ------------------------------------------------------------- */
+
+void scrollw(uint8_t mode, uint8_t start, uint8_t width, uint8_t speed)
+{
+  uint8_t i,t;
+
+  if(mode)
+  {
+    for (i = 0; i < width; i++)
+    {
+      lcd_cmd(0xEF);
+      lcd_cmd(0x90);
+      lcd_cmd(0x0F);
+      lcd_cmd(start);
+      lcd_cmd(0x10);
+      lcd_cmd(width);
+      lcd_cmd(0x11);
+      lcd_cmd(i+1);
+      for(t = speed; t != 0; t--)
+      {
+        _delay_ms(1);
+      }
+    }
+  }else{
+    for (i = width; i > 0; i--)
+    {
+      lcd_cmd(0xEF);
+      lcd_cmd(0x90);
+      lcd_cmd(0x0F);
+      lcd_cmd(start);
+      lcd_cmd(0x10);
+      lcd_cmd(width);
+      lcd_cmd(0x11);
+      lcd_cmd(i-1);
+      for(t = speed; t != 0; t--)
+      {
+        _delay_ms(1);
       }
     }
   }
