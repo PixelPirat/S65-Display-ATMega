@@ -42,6 +42,7 @@ Auch auf einem _Arduino_ lauffähig. (Nicht getestet)
   * `printf()` auf das Display
   * Horizontale oder Vertikale Ausgabe
   * Ausgabe einer Monochromen Bitmap
+  * Ein Bereich oder das ganze Display Scrollen
 
 ---
 
