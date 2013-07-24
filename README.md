@@ -14,7 +14,7 @@ Auch auf einem _Arduino_ lauffähig. (Nicht getestet)
   
 [Schaltplan](https://raw.github.com/PixelPirat/S65-Display-ATMega/master/Bilder/s65display_schaltplan.jpg "Schaltplan")  
   
-[Demo](https://github.com/PixelPirat/S65-Display-ATMega/blob/master/hallowelt.c "Demo")
+[hallowelt.c](https://github.com/PixelPirat/S65-Display-ATMega/blob/master/hallowelt.c "Demo")
   
 *~~Anwendungsbeispiel~~ und ~~Schaltplan~~ folgen ...*
   
